@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-
+    void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
