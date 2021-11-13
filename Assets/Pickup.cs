@@ -48,7 +48,7 @@ public class Pickup : MonoBehaviour
 
     private void OnMouseExit()
     {
-        Release();
+        //Release();
     }
     private void OnMouseUp()
     {
