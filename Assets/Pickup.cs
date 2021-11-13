@@ -9,6 +9,8 @@ public class Pickup : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         GetComponent<BoxCollider>().enabled  = false;
         GetComponent<Rigidbody>().useGravity = false;
         //this.transform.position = destination.position;
