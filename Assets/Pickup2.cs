@@ -19,28 +19,38 @@ public class Pickup2 : MonoBehaviour
         {
             otherRB.MovePosition(dest.transform.position);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (otherRB)
             {
-                otherRB.isKinematic = false;
-                otherRB = null;
+                Release();
             }
             else
             {
-                RaycastHit hit;
-                Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-                if (Physics.Raycast(ray, out hit, maxGrabDistance))
-                {
-                    otherRB = hit.collider.gameObject.GetComponent<Rigidbody>();
-                    if (otherRB)
-                    {
-                        otherRB.isKinematic = true;
-                    }
-                }
+                Grab();
             }
         }
+    }
+
+    private void Grab()
+    {
+        RaycastHit hit;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        if (Physics.Raycast(ray, out hit, maxGrabDistance))
+        {
+            otherRB = hit.collider.gameObject.GetComponent<Rigidbody>();
+            if (otherRB)
+            {
+                otherRB.isKinematic = true;
+            }
+        }
+    }
+
+    private void Release()
+    {
+        otherRB.isKinematic = false;
+        otherRB = null;
     }
 
     //get player dir
