@@ -8,6 +8,7 @@ public class Pickup_Spring : MonoBehaviour
     Transform m_hand;
 
     SpringJoint m_spring;
+    ChangeDistance m_changeDistance;
 
     Rigidbody m_inRange;
 
@@ -19,10 +20,14 @@ public class Pickup_Spring : MonoBehaviour
     float m_timeToDrop = 3f;
     float m_releaseTime = 0f;
 
+    [SerializeField]
+    bool m_limitGrabDistance = false;
+
     // Start is called before the first frame update
     void Start()
     {
         m_spring = GetComponent<SpringJoint>();
+        m_changeDistance = GetComponent<ChangeDistance>();
     }
 
     void Update()
@@ -46,9 +51,10 @@ public class Pickup_Spring : MonoBehaviour
         m_inRange = null;
 
         Ray ray = new Ray(m_hand.position, m_hand.forward);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
+        float maxDistance = m_limitGrabDistance ? m_changeDistance.MaxDist : Mathf.Infinity;
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
         {
-           //Debug.Log(hitInfo.collider.gameObject.name);
+            //Debug.Log(hitInfo.collider.gameObject.name);
             if (hitInfo.collider.CompareTag("Pickup"))
             {
                 m_inRange = hitInfo.collider.GetComponent<Rigidbody>();
@@ -65,6 +71,8 @@ public class Pickup_Spring : MonoBehaviour
             m_saveDrag = m_spring.connectedBody.drag;
             m_spring.connectedBody.drag = m_drag;
             m_releaseTime = m_timeToDrop;
+
+            m_changeDistance.MoveCloseTo(m_spring.connectedBody.transform);
         }
     }
 
