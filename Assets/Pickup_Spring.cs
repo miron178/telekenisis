@@ -81,6 +81,7 @@ public class Pickup_Spring : MonoBehaviour
         if (m_spring.connectedBody)
         {
             m_spring.connectedBody.drag = m_saveDrag;
+            m_spring.connectedBody.WakeUp();
             m_spring.connectedBody = null;
             m_releaseTime = 0f;
         }
