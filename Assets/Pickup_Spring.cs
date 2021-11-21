@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pickup_Spring : MonoBehaviour
 {
+    [SerializeField]
+    Transform m_hand;
+
     SpringJoint m_spring;
 
     Rigidbody m_inRange;
@@ -42,16 +45,16 @@ public class Pickup_Spring : MonoBehaviour
     {
         m_inRange = null;
 
-        RaycastHit HitInfo;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //why???
-        
-        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out HitInfo);
-        if (Physics.Raycast(ray, out HitInfo))
+        Vector3 distance = transform.position - m_hand.position;
+        Debug.DrawRay(m_hand.position, distance, Color.red);
+
+        Ray ray = new Ray(m_hand.position, m_hand.forward);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
-            Debug.Log(HitInfo.collider.gameObject.name);
-            if (HitInfo.collider.tag == "Pickup")
+            Debug.Log(hitInfo.collider.gameObject.name);
+            if (hitInfo.collider.CompareTag("Pickup"))
             {
-                m_inRange = HitInfo.collider.GetComponent<Rigidbody>();
+                m_inRange = hitInfo.collider.GetComponent<Rigidbody>();
             }
         }
         ButterFingers();
