@@ -45,13 +45,10 @@ public class Pickup_Spring : MonoBehaviour
     {
         m_inRange = null;
 
-        Vector3 distance = transform.position - m_hand.position;
-        Debug.DrawRay(m_hand.position, distance, Color.red);
-
         Ray ray = new Ray(m_hand.position, m_hand.forward);
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
-            Debug.Log(hitInfo.collider.gameObject.name);
+           //Debug.Log(hitInfo.collider.gameObject.name);
             if (hitInfo.collider.CompareTag("Pickup"))
             {
                 m_inRange = hitInfo.collider.GetComponent<Rigidbody>();
@@ -59,7 +56,6 @@ public class Pickup_Spring : MonoBehaviour
         }
         ButterFingers();
     }
-
 
     private void Grab()
     {

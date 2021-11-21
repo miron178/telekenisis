@@ -1010,8 +1010,9 @@ GameObject:
   - component: {fileID: 2146968683}
   - component: {fileID: 2146968682}
   - component: {fileID: 2146968684}
+  - component: {fileID: 2146968680}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,6 +1032,21 @@ Transform:
   m_Father: {fileID: 704665105}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146968680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146968678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12dafd144d0d71748bbb2aef2cc0d54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_minDist: 2
+  m_maxDist: Infinity
+  m_reactMouseSpeed: 200
 --- !u!145 &2146968682
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -1082,5 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe4e9d732c699e40851e057c5e138dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_hand: {fileID: 704665105}
   m_drag: 100
   m_timeToDrop: 3
+  m_limitGrabDistance: 0
