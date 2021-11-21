@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class Pickup_Spring : MonoBehaviour
 {
-    SpringJoint spring;
+    SpringJoint m_spring;
 
-    Rigidbody inRange;
+    Rigidbody m_inRange;
 
     [SerializeField]
-    float drag = 100;
-    float saveDrag;
+    float m_drag = 100f;
+    float m_saveDrag;
+
+    [SerializeField]
+    float m_timeToDrop = 3f;
+    float m_releaseTime = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        spring = GetComponent<SpringJoint>();
+        m_spring = GetComponent<SpringJoint>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (spring.connectedBody)
+            if (m_spring.connectedBody)
             {
                 Release();
             }
@@ -31,45 +35,66 @@ public class Pickup_Spring : MonoBehaviour
                 Grab();
             }
         }
+        Detect();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Detect()
     {
-        if (!inRange && other.tag == "Pickup")
+        m_inRange = null;
+
+        RaycastHit HitInfo;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //why???
+        
+        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out HitInfo);
+        if (Physics.Raycast(ray, out HitInfo))
         {
-            inRange = other.GetComponent<Rigidbody>();
+            Debug.Log(HitInfo.collider.gameObject.name);
+            if (HitInfo.collider.tag == "Pickup")
+            {
+                m_inRange = HitInfo.collider.GetComponent<Rigidbody>();
+            }
         }
+        ButterFingers();
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (inRange == other.GetComponent<Rigidbody>())
-        {
-            inRange = null;
-        }
-    }
-
-    Rigidbody FindObjectToGrab()
-    {
-        return inRange;
-    }
 
     private void Grab()
     {
-        spring.connectedBody = FindObjectToGrab();
-        if (spring.connectedBody)
+        m_spring.connectedBody = m_inRange;
+        if (m_spring.connectedBody)
         {
-            saveDrag = spring.connectedBody.drag;
-            spring.connectedBody.drag = drag;
+            m_saveDrag = m_spring.connectedBody.drag;
+            m_spring.connectedBody.drag = m_drag;
+            m_releaseTime = m_timeToDrop;
         }
     }
 
     private void Release()
     {
-        if (spring.connectedBody)
+        if (m_spring.connectedBody)
         {
-            spring.connectedBody.drag = saveDrag;
-            spring.connectedBody = null;
+            m_spring.connectedBody.drag = m_saveDrag;
+            m_spring.connectedBody = null;
+            m_releaseTime = 0f;
+        }
+    }
+
+    private void ButterFingers()
+    {
+        if (m_spring.connectedBody)
+        {
+            if(m_spring.connectedBody == m_inRange)
+            {
+                m_releaseTime = m_timeToDrop;
+            }
+            else 
+            {
+                m_releaseTime -= Time.deltaTime;
+                if (m_releaseTime <= 0)
+                {
+                    Release();
+                }
+            }
         }
     }
 }
