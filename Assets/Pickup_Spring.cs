@@ -17,7 +17,7 @@ public class Pickup_Spring : MonoBehaviour
     float m_saveDrag;
 
     [SerializeField]
-    float m_timeToDrop = 3f;
+    float m_timeToDrop = 1f;
     float m_releaseTime = 0f;
 
     [SerializeField]

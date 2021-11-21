@@ -1100,5 +1100,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hand: {fileID: 704665105}
   m_drag: 100
-  m_timeToDrop: 3
+  m_timeToDrop: 1
   m_limitGrabDistance: 0
