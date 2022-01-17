@@ -53,6 +53,11 @@ public class Pickup_Spring : MonoBehaviour
         Detect();
     }
 
+    public bool IsHolding()
+    {
+        return m_spring.connectedBody != null;
+    }
+
     void Detect()
     {
         m_inRange = null;

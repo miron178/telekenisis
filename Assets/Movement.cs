@@ -25,14 +25,17 @@ public class Movement : MonoBehaviour
 
     private Vector3 velocity;
 
+    private Pickup_Spring m_pickupSpring;
+
     private void Start()
     {
         groundMask = LayerMask.GetMask("Ground");
+        m_pickupSpring = GetComponentInChildren<Pickup_Spring>();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -50,7 +53,7 @@ public class Movement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
         
         //jump
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && !m_pickupSpring.IsHolding())
         {
             velocity.y = Mathf.Sqrt(jumpHeight * touchdownForce * gravity);
         }
