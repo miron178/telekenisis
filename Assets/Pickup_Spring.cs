@@ -21,6 +21,9 @@ public class Pickup_Spring : MonoBehaviour
     float m_releaseTime = 0f;
 
     [SerializeField]
+    float m_throwForce = 500f;
+
+    [SerializeField]
     bool m_limitGrabDistance = false;
 
     // Start is called before the first frame update
@@ -42,6 +45,10 @@ public class Pickup_Spring : MonoBehaviour
             {
                 Grab();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Throw();
         }
         Detect();
     }
@@ -103,6 +110,21 @@ public class Pickup_Spring : MonoBehaviour
                     Release();
                 }
             }
+        }
+    }
+
+    private void Throw()
+    {
+        if (m_spring.connectedBody)
+        {
+            PickUp pickUp = m_spring.connectedBody.GetComponent<PickUp>();
+            pickUp.thrown = true;
+            
+            m_spring.connectedBody.drag = m_saveDrag;
+            m_spring.connectedBody.WakeUp();
+            m_spring.connectedBody.AddForce(transform.forward * m_throwForce);
+            m_spring.connectedBody = null;
+            m_releaseTime = 0f;
         }
     }
 }
