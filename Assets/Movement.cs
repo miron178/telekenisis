@@ -27,6 +27,10 @@ public class Movement : MonoBehaviour
 
     private Pickup_Spring m_pickupSpring;
 
+    [SerializeField]
+    private float m_sliderDetectionDistance = 0.5f;
+    Slider m_slider = null;
+
     private void Start()
     {
         groundMask = LayerMask.GetMask("Ground");
@@ -38,24 +42,55 @@ public class Movement : MonoBehaviour
     { 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
-        if (isGrounded && velocity.y < 0)
+        Debug.DrawRay(groundCheck.position, new Vector3(0, -m_sliderDetectionDistance, 0), Color.black);
+        if (isGrounded)
         {
-            //-2 allows the player to conect with the ground instead of being stuck on the ground ckeck or its radius
-            velocity.y = touchdownForce;
+            if (velocity.y < 0)
+            {
+                velocity.y = touchdownForce;
+            }
+            Ray ray = new Ray(groundCheck.position, Vector3.down);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, m_sliderDetectionDistance))
+            {
+                Slider slider = hitInfo.collider.GetComponent<Slider>();
+                if (slider && slider != m_slider)
+                {
+                    //deactivate previous slider
+                    if (m_slider != null)
+                        m_slider.active = false;
+
+                    //activate new slider
+                    m_slider = slider;
+                    m_slider.active = true;
+                    transform.parent = hitInfo.collider.transform;
+                }
+            }
+        }
+        else
+        {
+            if (m_slider != null)
+                m_slider.active = false;
+            m_slider = null;
+            transform.SetParent(null);
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-
-        //walk
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
-        
-        //jump
-        if (Input.GetButtonDown("Jump") && isGrounded && !m_pickupSpring.IsHolding())
+        bool sliderPressed = Input.GetAxis("Slider") > 0;
+        if (!sliderPressed)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * touchdownForce * gravity);
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+
+
+            //walk
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+
+            //jump
+            if (Input.GetButtonDown("Jump") && isGrounded && !m_pickupSpring.IsHolding())
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * touchdownForce * gravity);
+            }
         }
 
         //calculate gravity

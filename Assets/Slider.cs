@@ -5,43 +5,77 @@ using UnityEngine;
 public class Slider : MonoBehaviour
 {
     [SerializeField]
-    private CharacterController controller;
-
-    [SerializeField]
     private float m_speed = 50.0f;
 
-    [SerializeField]
     private Vector3 m_direction;
 
     [SerializeField]
-    private bool m_perpetualMotion = false;
+    private Bumper m_bumperLeft;
 
+    [SerializeField]
+    private Bumper m_bumperRight;
+
+    [SerializeField]
+    private Bumper m_bumperForward;
+
+    [SerializeField]
+    private Bumper m_bumperBack;
+
+    private bool m_active = false;
+
+    public bool active { get => m_active; set => m_active = value; }
+
+    private void Start()
+    {
+        m_bumperLeft.OnHit = Bump;
+        m_bumperRight.OnHit = Bump;
+        m_bumperForward.OnHit = Bump;
+        m_bumperBack.OnHit = Bump;
+    }
     void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        if (m_perpetualMotion)
+        bool sliderPressed = Input.GetAxis("Slider") > 0;
+        if (m_active && sliderPressed && m_direction == Vector3.zero)
         {
-            m_direction = transform.right * x + transform.forward * z;
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+            if (x > 0 && !m_bumperRight.hit)
+            {
+                m_direction = Vector3.right;
+            }
+            else if (x < 0 && !m_bumperLeft.hit)
+            {
+                m_direction = Vector3.left;
+            }
+            else if (z > 0 && !m_bumperForward.hit)
+            {
+                m_direction = Vector3.forward;
+            }
+            else if (z < 0 && !m_bumperBack.hit)
+            {
+                m_direction = Vector3.back;
+            }
+            // else stay as zero
+        }
+
+        transform.position += m_direction * m_speed * Time.fixedDeltaTime;
+    }
+
+    void Bump(Bumper bumper)
+    {
+        m_direction = Vector3.zero;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (m_active)
+        {
+            Gizmos.color = new Color(0, 1, 0, 0.5f);
         }
         else
         {
-            x = Mathf.Abs(x) < 0.5 ? 0 : Mathf.Sign(x);
-            z = Mathf.Abs(z) < 0.5 ? 0 : Mathf.Sign(z);
-            if (m_direction == Vector3.zero)
-            {
-                m_direction = transform.right * x + transform.forward * z;
-            }
+            Gizmos.color = new Color(1, 0, 0, 0.5f);
         }
-        controller.Move(m_direction * m_speed * Time.deltaTime);
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.collider.CompareTag("Wall"))
-        {
-            m_direction = Vector3.zero;
-        }
+        Gizmos.DrawCube(transform.position, transform.lossyScale);
     }
 }
