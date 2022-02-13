@@ -29,6 +29,8 @@ public class Slider : MonoBehaviour
     private Vector3 m_forward = Vector3.zero;
     public Vector3 forward { get => m_forward; set => m_forward = value; }
 
+    private bool perpetualMotion = false;
+
     private void Start()
     {
         m_bumperLeft.OnHit = Bump;
@@ -42,30 +44,35 @@ public class Slider : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         bool sliderPressed = Input.GetAxis("Slider") > 0;
-        if (m_active && sliderPressed && m_direction == Vector3.zero)
+        if (m_active && sliderPressed && (m_direction == Vector3.zero || !perpetualMotion))
         {
             Vector3 direction;
             if (x > 0)
             {
                 direction = RightDir();
+                z = 0;
             }
             else if (x < 0)
             {
                 direction = LeftDir();
+                z = 0;
             }
             else if (z > 0)
             {
                 direction = ForwardDir();
+                x = 0;
             }
             else if (z < 0)
             {
                 direction = BackDir();
+                x = 0;
             }
             else
             {
                 direction = Vector3.zero;
+                x = 0;
+                z = 0;
             }
-
 
             if (direction != Vector3.zero)
             {
@@ -76,7 +83,15 @@ public class Slider : MonoBehaviour
                 }
             }
         }
-        transform.position += m_direction * m_speed * Time.fixedDeltaTime;
+        if (perpetualMotion)
+        {
+            transform.position += m_direction * m_speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            Vector3 input = m_direction * Mathf.Abs(x + z);
+            transform.position += input * m_speed * Time.fixedDeltaTime;
+        }
     }
 
     
