@@ -29,6 +29,7 @@ public class Slider : MonoBehaviour
     private Vector3 m_forward = Vector3.zero;
     public Vector3 forward { get => m_forward; set => m_forward = value; }
 
+    [SerializeField]
     private bool perpetualMotion = false;
 
     private void Start()
