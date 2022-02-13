@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+
 
 public class Slider : MonoBehaviour
 {
@@ -36,32 +38,48 @@ public class Slider : MonoBehaviour
     }
     void FixedUpdate()
     {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
         bool sliderPressed = Input.GetAxis("Slider") > 0;
         if (m_active && sliderPressed && m_direction == Vector3.zero)
         {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-            if (x > 0 && !m_bumperRight.hit)
+            Vector3 direction;
+            if (x > 0)
             {
-                m_direction = RightDir();
+                direction = RightDir();
             }
-            else if (x < 0 && !m_bumperLeft.hit)
+            else if (x < 0)
             {
-                m_direction = LeftDir();
+                direction = LeftDir();
             }
-            else if (z > 0 && !m_bumperForward.hit)
+            else if (z > 0)
             {
-                m_direction = ForwardDir();
+                direction = ForwardDir();
             }
-            else if (z < 0 && !m_bumperBack.hit)
+            else if (z < 0)
             {
-                m_direction = BackDir();
+                direction = BackDir();
             }
-            // else stay as zero
-        }
+            else
+            {
+                direction = Vector3.zero;
+            }
 
+
+            if (direction != Vector3.zero)
+            {
+                Bumper bumper = BumperForDirection(direction);
+                if (!bumper.hit)
+                {
+                    m_direction = direction;
+                }
+            }
+        }
         transform.position += m_direction * m_speed * Time.fixedDeltaTime;
     }
+
+    
 
     Vector3 ForwardDir()
     {
@@ -90,6 +108,34 @@ public class Slider : MonoBehaviour
     Vector3 LeftDir()
     {
         return Quaternion.AngleAxis(-90, Vector3.up) * ForwardDir();
+    }
+
+    Bumper BumperForDirection(Vector3 direction)
+    {
+        // Only X or Z axis direction is supported, only x or z are allowed, but not both
+        Assert.AreEqual(direction.y, 0.0f);
+        Assert.IsFalse(Mathf.Abs(direction.x) > 0.5f && Mathf.Abs(direction.z) > 0.5f);
+
+        if (direction.x > 0.5)
+        {
+            return m_bumperRight;
+        }
+        else if (direction.x < -0.5)
+        {
+            return m_bumperLeft;
+        }
+        else if (direction.z > 0.5)
+        {
+            return m_bumperForward;
+        }
+        else if (direction.z < -0.5)
+        {
+            return m_bumperBack;
+        }
+        else
+        { 
+            return null;
+        }
     }
 
     void Bump(Bumper bumper)
@@ -124,5 +170,14 @@ public class Slider : MonoBehaviour
             Gizmos.color = Color.black;
             Gizmos.DrawRay(forwardOrigin, ForwardDir() * 1.5f);
         }
+
+        // highlight forward bumper
+        Bumper bumper = BumperForDirection(ForwardDir());
+        m_bumperForward.debugHighlihgt = false;
+        m_bumperBack.debugHighlihgt = false;
+        m_bumperLeft.debugHighlihgt = false;
+        m_bumperRight.debugHighlihgt = false;
+        bumper.debugHighlihgt = true;
+
     }
 }

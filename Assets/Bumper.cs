@@ -14,6 +14,9 @@ public class Bumper : MonoBehaviour
     OnHitDelegate m_onHit = null;
     public OnHitDelegate OnHit { get => m_onHit; set => m_onHit = value; }
 
+    private bool m_debugHighlihgt = false;
+    public bool debugHighlihgt { get => m_debugHighlihgt; set => m_debugHighlihgt = value; }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(m_tag))
@@ -34,13 +37,14 @@ public class Bumper : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        float highlight = m_debugHighlihgt ? 1.0f : 0.3f;
         if (m_hit == null)
         {
-            Gizmos.color = new Color(0, 1, 0, 0.5f);
+            Gizmos.color = new Color(0, highlight, 0, 0.5f);
         }
         else
         {
-            Gizmos.color = new Color(1, 0, 0, 0.5f);
+            Gizmos.color = new Color(highlight, 0, 0, 0.5f);
         }
         Gizmos.DrawCube(transform.position, transform.lossyScale);
     }
