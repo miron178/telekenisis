@@ -69,9 +69,17 @@ public class Movement : MonoBehaviour
         else
         {
             if (m_slider != null)
+            {
                 m_slider.active = false;
+                m_slider.forward = Vector3.zero;
+            }
             m_slider = null;
             transform.SetParent(null);
+        }
+
+        if (m_slider != null)
+        {
+            m_slider.forward = transform.forward;
         }
 
         bool sliderPressed = Input.GetAxis("Slider") > 0;
