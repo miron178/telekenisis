@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 699587649}
   - component: {fileID: 699587643}
   - component: {fileID: 699587647}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,6 +611,7 @@ MonoBehaviour:
   m_bumperRight: {fileID: 972178273}
   m_bumperForward: {fileID: 692113714}
   m_bumperBack: {fileID: 1032860980}
+  perpetualMotion: 0
 --- !u!1 &817637348
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +984,7 @@ MonoBehaviour:
   gravity: -9.81
   groundCheck: {fileID: 1828885595}
   groundCheckRadius: 0.4
+  m_sliderDetectionDistance: 0.5
 --- !u!23 &1301533269
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1058,7 +1060,7 @@ GameObject:
   - component: {fileID: 1403902312}
   - component: {fileID: 1403902311}
   - component: {fileID: 1403902310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R
   m_TagString: Wall
   m_Icon: {fileID: 0}

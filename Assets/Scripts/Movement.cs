@@ -31,14 +31,16 @@ public class Movement : MonoBehaviour
     private float m_sliderDetectionDistance = 0.5f;
     Slider m_slider = null;
 
+    bool ControllerTouching = false;
+
     private void Start()
     {
         groundMask = LayerMask.GetMask("Ground");
         m_pickupSpring = GetComponentInChildren<Pickup_Spring>();
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     { 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
@@ -95,7 +97,7 @@ public class Movement : MonoBehaviour
             controller.Move(move * speed * Time.deltaTime);
 
             //jump
-            if (Input.GetButtonDown("Jump") && isGrounded && !m_pickupSpring.IsHolding())
+            if (Input.GetButtonDown("Jump") && isGrounded && !ControllerTouching)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * touchdownForce * gravity);
             }
@@ -105,5 +107,7 @@ public class Movement : MonoBehaviour
         //gravity requiers time squered thus "* Time.deltaTime" is repeated
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        //Debug.Log(m_heldObject);
     }
 }
