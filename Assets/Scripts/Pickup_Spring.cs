@@ -9,8 +9,10 @@ public class Pickup_Spring : MonoBehaviour
 
     SpringJoint m_spring;
     ChangeDistance m_changeDistance;
+    Button m_buttonInRange = null;
+    Button m_buttonPressed = null;
 
-    Rigidbody m_inRange;
+    Rigidbody m_pickupInRange;
 
     [SerializeField]
     float m_drag = 100f;
@@ -39,7 +41,7 @@ public class Pickup_Spring : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (m_spring.connectedBody)
+            if (m_spring.connectedBody || (m_buttonInRange && m_buttonInRange == m_buttonPressed))
             {
                 Release();
             }
@@ -62,7 +64,8 @@ public class Pickup_Spring : MonoBehaviour
 
     void Detect()
     {
-        m_inRange = null;
+        m_pickupInRange = null;
+        m_buttonInRange = null;
 
         Ray ray = new Ray(m_hand.position, m_hand.forward);
         float maxDistance = m_limitGrabDistance ? m_changeDistance.MaxDist : Mathf.Infinity;
@@ -71,15 +74,16 @@ public class Pickup_Spring : MonoBehaviour
             //Debug.Log(hitInfo.collider.gameObject.name);
             if (hitInfo.collider.CompareTag("Pickup"))
             {
-                m_inRange = hitInfo.collider.GetComponent<Rigidbody>();
+                m_pickupInRange = hitInfo.collider.GetComponent<Rigidbody>();
             }
+            m_buttonInRange = hitInfo.collider.GetComponent<Button>();
         }
         ButterFingers();
     }
 
     private void Grab()
     {
-        m_spring.connectedBody = m_inRange;
+        m_spring.connectedBody = m_pickupInRange;
         if (m_spring.connectedBody)
         {
             m_saveDrag = m_spring.connectedBody.drag;
@@ -87,6 +91,11 @@ public class Pickup_Spring : MonoBehaviour
             m_releaseTime = m_timeToDrop;
 
             m_changeDistance.MoveCloseTo(m_spring.connectedBody.transform);
+        }
+        else if (m_buttonInRange)
+        {
+            m_buttonInRange.Press();
+            m_buttonPressed = m_buttonInRange;
         }
     }
 
@@ -99,23 +108,26 @@ public class Pickup_Spring : MonoBehaviour
             m_spring.connectedBody = null;
             m_releaseTime = 0f;
         }
+        if (m_buttonPressed)
+        {
+            m_buttonPressed.Release();
+            m_buttonPressed = null;
+        }
     }
 
     private void ButterFingers()
     {
-        if (m_spring.connectedBody)
+        if ((m_spring.connectedBody && m_spring.connectedBody == m_pickupInRange) || 
+            (m_buttonPressed && m_buttonPressed == m_buttonInRange))
         {
-            if(m_spring.connectedBody == m_inRange)
+            m_releaseTime = m_timeToDrop;
+        }
+        else 
+        {
+            m_releaseTime -= Time.deltaTime;
+            if (m_releaseTime <= 0)
             {
-                m_releaseTime = m_timeToDrop;
-            }
-            else 
-            {
-                m_releaseTime -= Time.deltaTime;
-                if (m_releaseTime <= 0)
-                {
-                    Release();
-                }
+                Release();
             }
         }
     }
