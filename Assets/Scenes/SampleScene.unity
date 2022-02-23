@@ -587,17 +587,17 @@ PrefabInstance:
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.378
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.89
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.801
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
@@ -607,17 +607,17 @@ PrefabInstance:
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3601765230582500467, guid: d85e18459bb1b2f4d8b56ef6376711fd,
         type: 3}
@@ -701,6 +701,11 @@ PrefabInstance:
     - target: {fileID: 233443099448329421, guid: 5ed3a9bef0d6a7e43a6584ebffbc96c6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002179214250168996, guid: 5ed3a9bef0d6a7e43a6584ebffbc96c6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4977719128453723427, guid: 5ed3a9bef0d6a7e43a6584ebffbc96c6,
