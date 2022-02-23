@@ -11,8 +11,6 @@ public class Movement : MonoBehaviour
     private float speed = 5f;
     [SerializeField]
     private float jumpHeight = 2f;
-    [SerializeField]
-    private float touchdownForce = -1f;
 
     public float gravity = -9.81f;
 
@@ -38,6 +36,12 @@ public class Movement : MonoBehaviour
     {
         groundMask = LayerMask.GetMask("Ground");
         m_pickupSpring = GetComponentInChildren<Pickup_Spring>();
+
+        CharacterController controller = GetComponent<CharacterController>();
+        // calculate the correct vertical position:
+        float correctHeight = controller.center.y + controller.skinWidth;
+        // set the controller center vector:
+        controller.center = new Vector3(0, correctHeight, 0);
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -55,10 +59,6 @@ public class Movement : MonoBehaviour
         Debug.DrawRay(groundCheck.position, new Vector3(0, -m_sliderDetectionDistance, 0), Color.black);
         if (m_isGrounded)
         {
-            if (velocity.y < 0)
-            {
-                velocity.y = touchdownForce;
-            }
             Ray ray = new Ray(groundCheck.position, Vector3.down);
             if (Physics.Raycast(ray, out RaycastHit hitInfo, m_sliderDetectionDistance))
             {
@@ -107,7 +107,8 @@ public class Movement : MonoBehaviour
             //jump
             if (Input.GetButtonDown("Jump") && m_isGrounded)
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * touchdownForce * gravity);
+                //*-1 to make value positive (gravity is -9.81)
+                velocity.y = Mathf.Sqrt(jumpHeight * gravity * -1.0f);
             }
         }
 
