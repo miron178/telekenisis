@@ -21,7 +21,9 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float groundCheckRadius = 0.5f;
     private LayerMask groundMask;
-    private bool isGrounded;
+
+    private bool m_isGrounded;
+    public bool isGrounded { get => m_isGrounded; }
 
     private Vector3 velocity;
 
@@ -31,7 +33,6 @@ public class Movement : MonoBehaviour
     private float m_sliderDetectionDistance = 0.5f;
     Slider m_slider = null;
 
-    bool ControllerTouching = false;
 
     private void Start()
     {
@@ -39,13 +40,20 @@ public class Movement : MonoBehaviour
         m_pickupSpring = GetComponentInChildren<Pickup_Spring>();
     }
 
-        // Update is called once per frame
-        void Update()
-    { 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (m_pickupSpring.heldObject == hit.gameObject)
+        {
+            m_pickupSpring.Release();
+        }
+    }
+
+    void Update()
+    {
+        m_isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
 
         Debug.DrawRay(groundCheck.position, new Vector3(0, -m_sliderDetectionDistance, 0), Color.black);
-        if (isGrounded)
+        if (m_isGrounded)
         {
             if (velocity.y < 0)
             {
@@ -97,7 +105,7 @@ public class Movement : MonoBehaviour
             controller.Move(move * speed * Time.deltaTime);
 
             //jump
-            if (Input.GetButtonDown("Jump") && isGrounded && !ControllerTouching)
+            if (Input.GetButtonDown("Jump") && m_isGrounded)
             {
                 velocity.y = Mathf.Sqrt(jumpHeight * touchdownForce * gravity);
             }
@@ -107,7 +115,5 @@ public class Movement : MonoBehaviour
         //gravity requiers time squered thus "* Time.deltaTime" is repeated
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-        //Debug.Log(m_heldObject);
     }
 }

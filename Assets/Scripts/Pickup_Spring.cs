@@ -26,6 +26,8 @@ public class Pickup_Spring : MonoBehaviour
     [SerializeField]
     bool m_limitGrabDistance = false;
 
+    public GameObject heldObject { get => m_spring.connectedBody ? m_spring.connectedBody.gameObject : null; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,7 +90,7 @@ public class Pickup_Spring : MonoBehaviour
         }
     }
 
-    private void Release()
+    public void Release()
     {
         if (m_spring.connectedBody)
         {

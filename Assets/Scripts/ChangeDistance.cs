@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChangeDistance : MonoBehaviour
 {
+    Movement m_movement = null;
+
     [SerializeField]
     float m_minDist = 2f;
     [SerializeField]
@@ -13,9 +15,14 @@ public class ChangeDistance : MonoBehaviour
 
     public float MaxDist { get => m_maxDist; }
 
+    private void Start()
+    {
+        m_movement = GetComponentInParent<Movement>();
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && m_movement.isGrounded)
         {
             UpdateDistance(m_minDist);
         }
