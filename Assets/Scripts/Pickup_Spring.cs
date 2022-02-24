@@ -30,6 +30,8 @@ public class Pickup_Spring : MonoBehaviour
 
     public GameObject heldObject { get => m_spring.connectedBody ? m_spring.connectedBody.gameObject : null; }
 
+    private PickUp pickUp { get => m_spring.connectedBody?.GetComponent<PickUp>(); }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +74,7 @@ public class Pickup_Spring : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
         {
             //Debug.Log(hitInfo.collider.gameObject.name);
-            if (hitInfo.collider.CompareTag("Pickup"))
+            if (hitInfo.collider.GetComponent<PickUp>())
             {
                 m_pickupInRange = hitInfo.collider.GetComponent<Rigidbody>();
             }
@@ -90,6 +92,7 @@ public class Pickup_Spring : MonoBehaviour
             m_spring.connectedBody.drag = m_drag;
             m_releaseTime = m_timeToDrop;
 
+            m_changeDistance.movePlayer = !pickUp.movable;
             m_changeDistance.MoveCloseTo(m_spring.connectedBody.transform);
         }
         else if (m_buttonInRange)
@@ -113,6 +116,7 @@ public class Pickup_Spring : MonoBehaviour
             m_buttonPressed.Release();
             m_buttonPressed = null;
         }
+        m_changeDistance.movePlayer = false;
     }
 
     private void ButterFingers()
@@ -136,7 +140,6 @@ public class Pickup_Spring : MonoBehaviour
     {
         if (m_spring.connectedBody)
         {
-            PickUp pickUp = m_spring.connectedBody.GetComponent<PickUp>();
             pickUp.thrown = true;
             
             m_spring.connectedBody.drag = m_saveDrag;

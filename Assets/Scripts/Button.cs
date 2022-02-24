@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Pickup")
+        if (other.tag == "Player" || other.GetComponent<PickUp>())
         {
             Press();
         }
@@ -25,7 +25,7 @@ public class Button : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "Pickup")
+        if (other.tag == "Player" || other.GetComponent<PickUp>())
         {
             Release();
         }

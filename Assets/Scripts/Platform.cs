@@ -6,7 +6,7 @@ public class Platform : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pickup") || other.CompareTag("Player"))
+        if (other.GetComponent<PickUp>() || other.CompareTag("Player"))
         {
             other.transform.parent = transform;
         }
