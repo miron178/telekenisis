@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2875017229411229551}
   - component: {fileID: 2875017229411229461}
   - component: {fileID: 2875017229411229457}
+  - component: {fileID: 5525074736734502757}
+  - component: {fileID: 4796187745588008911}
   m_Layer: 8
   m_Name: Slider
   m_TagString: Untagged
@@ -29,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875017229411229460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 1, z: 6}
   m_Children:
   - {fileID: 2875017231326220517}
   - {fileID: 2875017229683884110}
@@ -133,6 +135,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &5525074736734502757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875017229411229460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5f9a34fdff3c840af210433f056c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4796187745588008911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2875017229411229460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c26a548f084f3a448bea55d4cc1cf53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2875017229422629377
 GameObject:
   m_ObjectHideFlags: 0
