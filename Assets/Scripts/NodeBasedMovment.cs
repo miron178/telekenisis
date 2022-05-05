@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimplePlatform : MonoBehaviour
+public class NodeBasedMovment : MonoBehaviour
 {
     [SerializeField]
     private Transform[] m_destination;
@@ -18,15 +18,15 @@ public class SimplePlatform : MonoBehaviour
     private bool m_forward = true;
 
     private int m_first = 0;
-    private int m_last  = 0;
+    private int m_last = 0;
 
-    
+
     private void Start()
     {
         m_last = m_destination.Length - 1;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // move towards the current target
         Vector3 direction = m_destination[m_target].transform.position - gameObject.transform.position;
@@ -43,9 +43,9 @@ public class SimplePlatform : MonoBehaviour
         if (gameObject.transform.position == m_destination[m_target].transform.position)
         {
             // reached the current target, choose next one
-            if(m_changeDir) //return backwards
+            if (m_changeDir) //return backwards
             {
-                if(m_target == m_first|| m_target == m_last)
+                if (m_target == m_first || m_target == m_last)
                 {
                     m_forward = !m_forward;
                 }
