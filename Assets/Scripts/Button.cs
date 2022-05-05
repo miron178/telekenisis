@@ -15,6 +15,11 @@ public class Button : MonoBehaviour
 
     public void Release() => m_onRelease?.Invoke();
 
+    private void Start()
+    {
+        Release();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.GetComponent<PickUp>())
