@@ -72,6 +72,11 @@ public class Movement : MonoBehaviour
                     //activate new slider
                     m_slider = slider;
                     m_slider.active = true;
+                }
+
+                Platform platform = hitInfo.collider.GetComponent<Platform>();
+                if (platform)
+                {
                     transform.parent = hitInfo.collider.transform;
                 }
             }
@@ -84,6 +89,7 @@ public class Movement : MonoBehaviour
                 m_slider.forward = Vector3.zero;
             }
             m_slider = null;
+
             transform.SetParent(null);
         }
 

@@ -6,7 +6,7 @@ public class Platform : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PickUp>() || other.CompareTag("Player"))
+        if (other.GetComponent<PickUp>())
         {
             other.transform.parent = transform;
         }
@@ -15,6 +15,9 @@ public class Platform : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        other.transform.SetParent(null);
+        if (other.transform.parent == transform)
+        {
+            other.transform.SetParent(null);
+        }
     }
 }
