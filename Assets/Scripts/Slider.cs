@@ -78,11 +78,15 @@ public class Slider : MonoBehaviour
             if (direction != Vector3.zero)
             {
                 Bumper bumper = BumperForDirection(direction);
-                if (!bumper.hit)
+                if (bumper.hitCount == 0)
                 {
                     m_direction = direction;
                 }
             }
+        }
+        else
+        {
+            m_direction = Vector3.zero;
         }
         if (perpetualMotion)
         {
