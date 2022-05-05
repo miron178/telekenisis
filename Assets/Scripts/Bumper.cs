@@ -7,8 +7,8 @@ public class Bumper : MonoBehaviour
     [SerializeField]
     string m_tag = "";
 
-    private Collider m_hit = null;
-    public Collider hit { get => m_hit; }
+    private int m_hitCount = 0;
+    public int hitCount { get => m_hitCount; }
     
     public delegate void OnHitDelegate(Bumper bumper);
     OnHitDelegate m_onHit = null;
@@ -21,8 +21,8 @@ public class Bumper : MonoBehaviour
     {
         if (other.CompareTag(m_tag))
         {
-            Debug.Log("bumper: " + m_tag);
-            m_hit = other;
+            m_hitCount++;
+            Debug.Log("bumper: " + m_tag + " enter " + m_hitCount);
             if (m_onHit != null)
             {
                 m_onHit(this);
@@ -31,14 +31,17 @@ public class Bumper : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (m_hit == other)
-            m_hit = null;
+        if (other.CompareTag(m_tag))
+        {
+            Debug.Log("bumper: " + m_tag + " exit " + m_hitCount);
+            m_hitCount--;
+        }
     }
 
     private void OnDrawGizmos()
     {
         float highlight = m_debugHighlihgt ? 1.0f : 0.3f;
-        if (m_hit == null)
+        if (m_hitCount == 0)
         {
             Gizmos.color = new Color(0, highlight, 0, 0.5f);
         }
