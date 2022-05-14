@@ -83,11 +83,13 @@ public class Slider : MonoBehaviour
                     m_direction = direction;
                 }
             }
-        }
-        else
+        }        
+        else if (!perpetualMotion)
         {
+            // stop moving when the player leaves platform
             m_direction = Vector3.zero;
         }
+        
         if (perpetualMotion)
         {
             transform.position += m_direction * m_speed * Time.fixedDeltaTime;
@@ -160,7 +162,10 @@ public class Slider : MonoBehaviour
 
     void Bump(Bumper bumper)
     {
-        m_direction = Vector3.zero;
+        if (bumper == BumperForDirection(m_direction))
+        {
+            m_direction = Vector3.zero;
+        }
     }
 
     //debug stuff
