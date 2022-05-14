@@ -11843,7 +11843,7 @@ PrefabInstance:
     - target: {fileID: 2875017229411229551, guid: 03761dfbaf131da4ab9873ebbf6d3179,
         type: 3}
       propertyPath: perpetualMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03761dfbaf131da4ab9873ebbf6d3179, type: 3}
@@ -25495,7 +25495,7 @@ PrefabInstance:
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 10.46
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
@@ -41681,8 +41681,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381978945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 25, y: 1, z: 35}
+  m_LocalPosition: {x: 2.7, y: -0.5, z: -11}
+  m_LocalScale: {x: 50, y: 1, z: 60}
   m_Children: []
   m_Father: {fileID: 1405402345}
   m_RootOrder: 1
@@ -41711,8 +41711,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7, y: 1, z: 1.2}
-  m_Center: {x: 0.31814554, y: 0, z: -0.07928886}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1382859950
 PrefabInstance:
   m_ObjectHideFlags: 0
