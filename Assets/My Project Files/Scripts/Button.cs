@@ -11,13 +11,23 @@ public class Button : MonoBehaviour
     [SerializeField]
     UnityEvent m_onRelease;
 
+    [SerializeField]
+    bool m_activeOnStart = false;
+
     public void Press() => m_onPress?.Invoke();
 
     public void Release() => m_onRelease?.Invoke();
 
     private void Start()
     {
-        Release();
+        if (m_activeOnStart)
+        {
+            Press();
+        }
+        else
+        {
+            Release();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
