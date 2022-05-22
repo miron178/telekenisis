@@ -16,12 +16,11 @@ public class Movement : MonoBehaviour
 
     [SerializeField]
     private Transform groundCheck;
-    [SerializeField]
-    private float groundCheckRadius = 0.5f;
+    //[SerializeField]
+    //private float groundCheckRadius = 0.5f;
     private LayerMask groundMask;
 
-    private bool m_isGrounded;
-    public bool isGrounded { get => m_isGrounded; }
+    public bool isGrounded { get => controller.isGrounded; }
 
     private Vector3 velocity;
 
@@ -30,6 +29,15 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float m_sliderDetectionDistance = 0.5f;
     Slider m_slider = null;
+
+    private enum State
+    {
+        WALKING,
+        SLIDING,
+        FALLING
+    }
+    private State state = State.FALLING;
+
 
 
     private void Start()
@@ -54,73 +62,175 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        m_isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
-
-        Debug.DrawRay(groundCheck.position, new Vector3(0, -m_sliderDetectionDistance, 0), Color.black);
-        if (m_isGrounded)
+        switch (state)
         {
-            Ray ray = new Ray(groundCheck.position, Vector3.down);
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, m_sliderDetectionDistance))
+            case State.WALKING:
+                Walk();
+                break;
+            case State.SLIDING:
+                Slide();
+                break;
+            case State.FALLING:
+                Fall();
+                break;
+            default:
+                Debug.LogError("The state is unknown.");
+                break;
+        }
+    }
+
+    private void DetectSliderOrPlatform()
+    {
+        Debug.DrawRay(groundCheck.position, new Vector3(0, -m_sliderDetectionDistance, 0), Color.white);
+        Ray ray = new Ray(groundCheck.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, m_sliderDetectionDistance))
+        {
+            if (!DetectSlider(hitInfo))
             {
-                Slider slider = hitInfo.collider.GetComponent<Slider>();
-                if (slider && slider != m_slider)
-                {
-                    //deactivate previous slider
-                    if (m_slider != null)
-                        m_slider.active = false;
-
-                    //activate new slider
-                    m_slider = slider;
-                    m_slider.active = true;
-                }
-
-                Platform platform = hitInfo.collider.GetComponent<Platform>();
-                if (platform)
-                {
-                    transform.parent = hitInfo.collider.transform;
-                }
+                DeactivateSlider();
+            }
+            if (!DetectPlatform(hitInfo))
+            {
+                DeactivatePlatform();
             }
         }
         else
         {
-            if (m_slider != null)
-            {
-                m_slider.active = false;
-                m_slider.forward = Vector3.zero;
-            }
-            m_slider = null;
-
-            transform.SetParent(null);
+            DeactivateSlider();
+            DeactivatePlatform();
         }
+    }
 
+    private bool DetectSlider(RaycastHit hitInfo)
+    {
+        Slider slider = hitInfo.collider.GetComponent<Slider>();
+        if (slider && slider != m_slider)
+        {
+            //deactivate previous slider
+            if (m_slider != null)
+                m_slider.active = false;
+
+            //activate new slider
+            m_slider = slider;
+            m_slider.active = true;
+        }
+        return slider != null;
+    }
+
+    private bool DetectPlatform(RaycastHit hitInfo)
+    {
+        Platform platform = hitInfo.collider.GetComponent<Platform>();
+        if (platform)
+        {
+            transform.parent = hitInfo.collider.transform;
+        }
+        return platform != null;
+    }
+
+    private void DeactivateSlider()
+    {
         if (m_slider != null)
         {
-            m_slider.forward = transform.forward;
+            m_slider.active = false;
+            m_slider.forward = Vector3.zero;
+        }
+        m_slider = null;
+    }
+    private void DeactivatePlatform()
+    {
+        transform.SetParent(null);
+    }
+
+    private void UpdatePlayerVelocityXZ()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        //walk
+        Vector3 move = transform.right * x + transform.forward * z;
+        controller.Move(move * speed * Time.deltaTime);
+    }
+
+    private void StartWalk()
+    {
+        state = State.WALKING;
+        velocity.y = 0;
+        DetectSliderOrPlatform();
+    }
+
+    private void Walk()
+    {
+        UpdatePlayerVelocityXZ();
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            //*-1 to make value positive (gravity is -9.81)
+            velocity.y = Mathf.Sqrt(jumpHeight * gravity * -1.0f);
+            StartFall();
+        }
+        else if (Input.GetAxis("Slider") > 0)
+        {
+            StartSlide();
+        }
+        else
+        {
+            //keep controller grounded (playerVelocity.y = 0 doesn't work)
+            velocity.y = gravity * Time.deltaTime;
         }
 
-        bool sliderPressed = Input.GetAxis("Slider") > 0;
-        if (!sliderPressed)
+        Vector3 movement = velocity * Time.deltaTime;
+        if (movement.magnitude >= controller.minMoveDistance)
         {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-
-
-
-            //walk
-            Vector3 move = transform.right * x + transform.forward * z;
-            controller.Move(move * speed * Time.deltaTime);
-
-            //jump
-            if (Input.GetButtonDown("Jump") && m_isGrounded)
+            controller.Move(movement);
+            if (controller.isGrounded)
             {
-                //*-1 to make value positive (gravity is -9.81)
-                velocity.y = Mathf.Sqrt(jumpHeight * gravity * -1.0f);
+                DetectSliderOrPlatform();
+            }
+            else
+            {
+                StartFall();
             }
         }
+    }
 
-        //calculate gravity
-        //gravity requiers time squered thus "* Time.deltaTime" is repeated
+    private void StartSlide()
+    {
+        state = State.SLIDING;
+    }
+
+    private void Slide()
+    {
+        if (Input.GetAxis("Slider") > 0)
+        {
+            //keep controller grounded (playerVelocity.y = 0 doesn't work)
+            velocity.y = gravity * Time.deltaTime;
+
+            m_slider.forward = transform.forward;
+        }
+        else
+        {
+            StartWalk();
+        }
+    }
+
+    private void StartFall()
+    {
+        state = State.FALLING;
+        DeactivateSlider();
+        DeactivatePlatform();
+    }
+
+    private void Fall()
+    {
+        UpdatePlayerVelocityXZ();
+
+        //*-1 to make value positive (gravity is -9.81)
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (controller.isGrounded)
+        {
+            StartWalk();
+        }
     }
 }
