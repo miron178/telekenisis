@@ -17,7 +17,18 @@ MonoBehaviour:
       m_Calls: []
   m_onRelease:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_activeOnStart: 0
 --- !u!1001 &5183541611211957397
 PrefabInstance:
@@ -30,6 +41,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Invis Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 490195431035288402, guid: 77a58438a03a58949a7249973eae703c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
@@ -49,42 +65,42 @@ PrefabInstance:
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.2
+      value: 20.51
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.5
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288403, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
