@@ -71,7 +71,8 @@ public class Pickup_Spring : MonoBehaviour
 
         Ray ray = new Ray(m_hand.position, m_hand.forward);
         float maxDistance = m_limitGrabDistance ? m_changeDistance.MaxDist : Mathf.Infinity;
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance))
+        LayerMask layerMask = LayerMask.GetMask("Ignore");
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance, ~layerMask.value))
         {
             //Debug.Log(hitInfo.collider.gameObject.name);
             if (hitInfo.collider.GetComponent<PickUp>())
