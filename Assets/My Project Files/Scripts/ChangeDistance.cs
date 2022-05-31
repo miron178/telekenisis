@@ -28,7 +28,7 @@ public class ChangeDistance : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && m_movement.isGrounded)
+        if (Input.GetAxis("Pull") != 0 && m_movement.isGrounded)
         {
             UpdateDistance(m_minDist, m_movePlayer);
         }

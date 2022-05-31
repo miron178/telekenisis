@@ -32,6 +32,16 @@ public class Pickup_Spring : MonoBehaviour
 
     private PickUp pickUp { get => m_spring.connectedBody?.GetComponent<PickUp>(); }
 
+    enum ButtonState
+    {
+        Off,
+        Press,
+        On,
+        Release
+    };
+    private ButtonState m_interact = ButtonState.Off;
+    private ButtonState m_throw = ButtonState.Off;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +49,48 @@ public class Pickup_Spring : MonoBehaviour
         m_changeDistance = GetComponent<ChangeDistance>();
     }
 
+
+    private ButtonState UpdateButtonState(ButtonState state, string axis)
+    {
+        if (Input.GetAxisRaw(axis) != 0)
+        {
+            switch (state)
+            {
+                case ButtonState.Off:
+                case ButtonState.Release:
+                    state = ButtonState.Press;
+                    break;
+                case ButtonState.Press:
+                    state = ButtonState.On;
+                    break;
+                case ButtonState.On:
+                    break;
+            }
+        }
+        else
+        {
+            switch (m_interact)
+            {
+                case ButtonState.Off:
+                    break;
+                case ButtonState.Press:
+                case ButtonState.On:
+                    state = ButtonState.Release;
+                    break;
+                case ButtonState.Release:
+                    state = ButtonState.Off;
+                    break;
+            }
+        }
+        return state;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        m_interact = UpdateButtonState(m_interact, "Interact");
+        m_throw = UpdateButtonState(m_throw, "Throw");
+
+        if (m_interact == ButtonState.Press)
         {
             if (m_spring.connectedBody || (m_buttonInRange && m_buttonInRange == m_buttonPressed))
             {
@@ -52,7 +101,7 @@ public class Pickup_Spring : MonoBehaviour
                 Grab();
             }
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (m_throw == ButtonState.Press)
         {
             Throw();
         }
