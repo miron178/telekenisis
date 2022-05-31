@@ -22,7 +22,7 @@ public class Bumper : MonoBehaviour
         if (other.CompareTag(m_tag))
         {
             m_hitCount++;
-            Debug.Log("bumper: " + m_tag + " enter " + m_hitCount);
+            //Debug.Log("bumper: " + m_tag + " enter " + m_hitCount);
             if (m_onHit != null)
             {
                 m_onHit(this);
@@ -33,7 +33,7 @@ public class Bumper : MonoBehaviour
     {
         if (other.CompareTag(m_tag))
         {
-            Debug.Log("bumper: " + m_tag + " exit " + m_hitCount);
+            //Debug.Log("bumper: " + m_tag + " exit " + m_hitCount);
             m_hitCount--;
         }
     }

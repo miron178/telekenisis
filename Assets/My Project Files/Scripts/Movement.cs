@@ -168,7 +168,7 @@ public class Movement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * gravity * -1.0f);
             StartFall();
         }
-        else if (Input.GetAxis("Slider") > 0)
+        else if (m_slider != null && Input.GetAxis("Slider") > 0)
         {
             StartSlide();
         }
