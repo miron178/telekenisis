@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pickup_Spring : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class Pickup_Spring : MonoBehaviour
     public GameObject heldObject { get => m_spring.connectedBody ? m_spring.connectedBody.gameObject : null; }
 
     private PickUp pickUp { get => m_spring.connectedBody?.GetComponent<PickUp>(); }
+
+    [SerializeField]
+    Image m_cursor;
 
     enum ButtonState
     {
@@ -116,7 +120,7 @@ public class Pickup_Spring : MonoBehaviour
     void Detect()
     {
         m_pickupInRange = null;
-        m_buttonInRange = null;
+        Button newButtonInRange = null;
 
         Ray ray = new Ray(m_hand.position, m_hand.forward);
         float maxDistance = m_limitGrabDistance ? m_changeDistance.MaxDist : Mathf.Infinity;
@@ -128,9 +132,29 @@ public class Pickup_Spring : MonoBehaviour
             {
                 m_pickupInRange = hitInfo.collider.GetComponent<Rigidbody>();
             }
-            m_buttonInRange = hitInfo.collider.GetComponent<Button>();
+
+            newButtonInRange = hitInfo.collider.GetComponent<Button>();
         }
         ButterFingers();
+
+        if (m_buttonInRange != null && m_buttonInRange != newButtonInRange)
+        {
+            m_buttonInRange.Exit();
+        }
+        m_buttonInRange = newButtonInRange;
+        if (m_buttonInRange != null)
+        {
+            m_buttonInRange.Enter();
+        }
+
+        if (m_pickupInRange != null || m_buttonInRange != null)
+        {
+            m_cursor.color = Color.green;
+        }
+        else
+        {
+            m_cursor.color = Color.red;
+        }
     }
 
     private void Grab()

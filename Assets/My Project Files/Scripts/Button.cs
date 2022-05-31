@@ -12,11 +12,18 @@ public class Button : MonoBehaviour
     UnityEvent m_onRelease;
 
     [SerializeField]
+    UnityEvent m_onEnter;
+
+    [SerializeField]
+    UnityEvent m_onExit;
+
+    [SerializeField]
     bool m_activeOnStart = false;
 
     public void Press() => m_onPress?.Invoke();
-
     public void Release() => m_onRelease?.Invoke();
+    public void Enter() => m_onEnter?.Invoke();
+    public void Exit() => m_onExit?.Invoke();
 
     private void Start()
     {
