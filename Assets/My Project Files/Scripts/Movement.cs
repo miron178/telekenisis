@@ -162,7 +162,7 @@ public class Movement : MonoBehaviour
     {
         UpdatePlayerVelocityXZ();
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetAxis("Jump") > 0)
         {
             //*-1 to make value positive (gravity is -9.81)
             velocity.y = Mathf.Sqrt(jumpHeight * gravity * -1.0f);
