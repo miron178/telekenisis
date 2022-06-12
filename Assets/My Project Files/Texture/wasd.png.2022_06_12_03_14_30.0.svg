@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg914"
+   width="61.439999"
+   height="40.959999"
+   viewBox="0 0 61.439999 40.959999"
+   sodipodi:docname="wasd.png"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   inkscape:export-filename="C:\Users\miron\source\repos\telekenisis\Assets\My Project Files\Texture\wasd.png"
+   inkscape:export-xdpi="1054.6875"
+   inkscape:export-ydpi="1054.6875"
+   inkscape:dataloss="true"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs918" />
+  <sodipodi:namedview
+     id="namedview916"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="11.313709"
+     inkscape:cx="35.222756"
+     inkscape:cy="34.692426"
+     inkscape:window-width="1718"
+     inkscape:window-height="1368"
+     inkscape:window-x="-7"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g920" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g920">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:-7px;fill:#000000;fill-opacity:1;stroke:none"
+       x="0.62633902"
+       y="11.054062"
+       id="text30320"
+       inkscape:export-filename="C:\Users\miron\source\repos\telekenisis\Assets\My Project Files\Texture\ShiftText.png"
+       inkscape:export-xdpi="1449.7888"
+       inkscape:export-ydpi="1449.7888"><tspan
+         sodipodi:role="line"
+         x="0.62633902"
+         y="11.054062"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+         id="tspan278648">1</tspan></text>
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.125;stroke-opacity:1;paint-order:normal"
+       d=""
+       id="path159048"
+       inkscape:export-filename="C:\Users\miron\source\repos\telekenisis\Assets\My Project Files\Texture\ShiftText.png"
+       inkscape:export-xdpi="1449.7888"
+       inkscape:export-ydpi="1449.7888" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.125;stroke-opacity:1;paint-order:normal"
+       d=""
+       id="path286490"
+       inkscape:export-filename="C:\Users\miron\source\repos\telekenisis\Assets\My Project Files\Texture\ShiftText.png"
+       inkscape:export-xdpi="1449.7888"
+       inkscape:export-ydpi="1449.7888" />
+  </g>
+</svg>
