@@ -37,10 +37,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 947616654, guid: 77a58438a03a58949a7249973eae703c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088341740, guid: 77a58438a03a58949a7249973eae703c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 490195431035288402, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
       propertyPath: m_Name
-      value: Invis Button
+      value: Invis Button (DO NOT DELETE)
       objectReference: {fileID: 0}
     - target: {fileID: 490195431035288402, guid: 77a58438a03a58949a7249973eae703c,
         type: 3}
