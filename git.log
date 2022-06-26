@@ -1,0 +1,905 @@
+commit fe85b4ae11eacc46234d2ac1bea1100452a454aa
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 02:04:32 2022 +0100
+
+    Remove GUI dupe
+
+commit c8b5874009f7b645878845242fd0ad66f0114411
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 01:43:31 2022 +0100
+
+    adjust triggers on hub decals
+
+commit 26a9afe499388f2a9cc6004b1b0d9783e896da48
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 01:33:21 2022 +0100
+
+    Left over???
+    
+    from last commit
+
+commit 1d014c4a638e7d4d142e31474f65f0d9a609731a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 01:13:03 2022 +0100
+
+    sort hub
+
+commit d1f170d878987d092146188669a51de516907a0f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 01:08:35 2022 +0100
+
+    Add last room decals
+
+commit 42e2bd0dceadff62f004ccb224b1b5378fe806dc
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 00:51:18 2022 +0100
+
+    fix teleporters
+
+commit df826d811a69ea5c0bee1870a2933c2b4061bce4
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 00:42:22 2022 +0100
+
+    add hub room 2
+
+commit 99378f3dc98e759f06c046edb36504fb1384b98b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Jun 14 00:22:27 2022 +0100
+
+    add hub door trigger
+
+commit 744c69b039f3ec1ec1d8c9c496c42aacdfd84da4
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 23:41:18 2022 +0100
+
+    delete excess box
+
+commit d109b28e351466d75c45cfad728462c87840341e
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 23:40:32 2022 +0100
+
+    fix emission difference
+
+commit 47b64f812c4676757b737ab9a8cb34ad8f9dc910
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 23:38:19 2022 +0100
+
+    add torches to levels 2 & 3
+
+commit 489470b55d3bb91c1e015391b2a6fe669be4f28f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 23:13:50 2022 +0100
+
+    add shaft in last room
+
+commit d945ee05be5f8cfd7f502377796d86c977e05774
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 21:47:11 2022 +0100
+
+    put torches in folder
+
+commit 2a3f2eb9c8e578bfd32746a1c9f0df0cea693b21
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 21:45:26 2022 +0100
+
+    Basic torches
+
+commit 87a5bdf7ddb22c61785c32c8ad76d27c13c797a2
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 21:25:22 2022 +0100
+
+    Better stacking building room
+
+commit ef3a3a6c5da1bb3d4018e53d4fe4bb918fa54b5c
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 21:02:51 2022 +0100
+
+    delete unused assets
+
+commit 17175b47f984e46e1830382b64821d4067225cde
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 20:59:54 2022 +0100
+
+    quit and restart buttons added
+
+commit e7146d9c721013dd466fc885ceae7ebe3dca81d9
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 01:49:47 2022 +0100
+
+    fix see-through wall
+    
+    falling up
+
+commit 4f578158e5b67206c09d6c26a20d58caac216d9b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 01:35:19 2022 +0100
+
+    import and add textures
+
+commit 59ad7d4f1b9f11130f3514bbdaeee2b9c3026e8a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jun 13 00:16:48 2022 +0100
+
+    doors now have barriers as a part
+    
+    barriers can no longer be deleted -> move them out of the way
+
+commit 911a84d8e615e4f87d546841094fd8cb8ee85022
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 23:58:56 2022 +0100
+
+    remove duped file
+
+commit 2e886304b540fa53246dd7d771892fbdb2f0b199
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 23:57:22 2022 +0100
+
+    adjust physics material
+
+commit 1c2a9dfefdcc895c59a0bc08d9b467909cb29ffd
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 23:48:18 2022 +0100
+
+    add "hint" decals
+
+commit cfea6879e1165aeefb9d677952b726edd33f780e
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 20:18:08 2022 +0100
+
+    move boxes away from door
+
+commit 389d7a0c99a188e1cd41ffbd83bdf0b3a1ea0c5f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 20:12:18 2022 +0100
+
+    delete torches
+
+commit 17cebc3d2e18e7f92d02c589f42afa34289c5f0a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 20:07:26 2022 +0100
+
+    fix z clip and see-through wall on first platform
+
+commit adaaa216f5f553f9f232805d7d131c27c1b0445f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 19:05:52 2022 +0100
+
+    Add Esc decal and txt
+
+commit d216e015f034b71fec172614abf0fb3afbb32815
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 18:50:38 2022 +0100
+
+    allow return to hub. fixed level select Emission
+
+commit bdec584811e8065e2e6f8be3dc0491079fc39846
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 18:34:35 2022 +0100
+
+    change jump to axis instead of hardwired input
+
+commit 9411a2b7170fca30dce4008105351218e60fcc97
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 18:29:07 2022 +0100
+
+    working level select
+
+commit 9eba8aefbf45f138440af7e1456aeadfb1d5f4c6
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 04:16:05 2022 +0100
+
+    hub sign correction
+
+commit b1fe0a4f2ad4a3952b2fa2d06c66907f205d0bef
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 04:14:23 2022 +0100
+
+    add last rooms
+
+commit 858cfd6ac88690f9473f6565f204eb8228de33c6
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 03:54:50 2022 +0100
+
+    add roof to hub(s)
+
+commit dbc1dfdfa4e4a530de1bd8daed51e3f7ef6513e2
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Jun 12 03:51:55 2022 +0100
+
+    Hub decals done
+
+commit 1e49281b4be3848d8eaf64f8bfa06d4079a4a6dd
+Merge: 3c26a2b 22a8374
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu Jun 9 23:36:44 2022 +0100
+
+    Merge branch 'main' of https://github.com/miron178/telekenisis
+
+commit 3c26a2b83d916bc2a51e8fe9532378abf8c01996
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu Jun 9 23:36:38 2022 +0100
+
+    fixed missing texture on fixing hdrp
+
+commit 22a8374c4a40ac62002f740decd99e2aeb174150
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu Jun 9 00:01:58 2022 +0100
+
+    remove balcony outcrop.
+    
+    make esc room at end
+    add trigger to allow new level
+
+commit 815455326c3356d7eabd91b70745bc2bb44f3811
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Jun 8 23:40:10 2022 +0100
+
+    add missing roof
+
+commit 2589e59ae0219d4cdcb400a0326455d8fe76d484
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Jun 8 23:39:17 2022 +0100
+
+    add Hole *2
+
+commit 2e9a474db7105f5469d8ec63c32c742fa625716b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Jun 8 22:40:26 2022 +0100
+
+    add fog in first hole
+
+commit 49473a2aa9afa73171269e33c9d56f1bc43b58cd
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Jun 8 21:27:27 2022 +0100
+
+    add roofs
+
+commit c9f983ae22d8bfe86a1440c90c1e1d202cbafc7f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Jun 8 20:23:31 2022 +0100
+
+    can't remove, probably hdrp
+
+commit 1808788fbffa7e78a54543a04b66030e67e493a2
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue May 31 21:00:01 2022 +0100
+
+    facilitate decal driven information
+
+commit c416c34431f934c9a5c0d4487923079ea87c5339
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue May 31 19:53:47 2022 +0100
+
+    add trap to scripts
+
+commit 29e5ab12210110bda203ed27f77dc882e499dcb5
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue May 31 19:53:21 2022 +0100
+
+    fix slider trigger
+    
+    remove debug from bumper
+
+commit 4289ca48fcee5497392a3553809121acd822c68f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue May 31 19:52:37 2022 +0100
+
+    rebind controls
+    
+    add axis and rename 3 axis
+
+commit 5e72ccd497f6a13d5d9af12d13e1d17a07c6cc99
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue May 31 19:12:42 2022 +0100
+
+    fix no box button room
+
+commit 1b5bd86a2c3e577d89bfb1b48dc13ea78a360706
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon May 23 00:33:32 2022 +0100
+
+    add missing wall
+
+commit dadee6c34de0ceeae211176f2a54a04482588b3f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon May 23 00:28:40 2022 +0100
+
+    set player location for first draft
+
+commit 0e7b507465b34510f8601c005ed387594d51a8cd
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon May 23 00:27:41 2022 +0100
+
+    remake character movment
+    
+    fixed grounding issue
+    set as state machine
+    set ground check to new pos
+
+commit 4ee0a7c7b34c5609d68b6a4d9ce05e5cc5f3a1bc
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 22:51:16 2022 +0100
+
+    post build change???
+
+commit f0b6447cb7d81c21ce8af941da8c3ce29946e0f3
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 22:51:04 2022 +0100
+
+    remove double walls
+
+commit 59e203dcb1a0146f25e15293cabbc195bb408e31
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 22:21:58 2022 +0100
+
+    level 3
+
+commit add5a28718868b8cf6a302194282cc92c764c9bf
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 19:46:15 2022 +0100
+
+    add lights to last levels && Re-name "Folder"
+
+commit 2782f7e8267f899d4d2748c450c9771e24189943
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 19:39:23 2022 +0100
+
+    re-organize and re-name "Folders"
+
+commit 9a94c9f035549c09c4c829b858c7751b25644395
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 19:34:39 2022 +0100
+
+    Organize lights for first 2 sections
+
+commit e713276de335a8350491174b6d3cb4a50e20dba8
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 19:24:48 2022 +0100
+
+    fix last lvl add and barriers
+    
+    traps no longer block pickup,
+    barriers altered to better fit doors
+
+commit bdab251f24eb80773790b256be2ecac3fbc1da52
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 18:47:31 2022 +0100
+
+    level changes to work from "add new tag" commit to here
+
+commit c4da28269ae0f40fdaf03a9554c4b0055d1bc0e3
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 18:45:22 2022 +0100
+
+    stop ray cast interacting with ignore layer
+
+commit e6297edce10ead8416b47cd772a00fd01e4a647b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 18:44:24 2022 +0100
+
+    re make button script so that the new script isn't triggered by objects or grabs
+
+commit dd41407d173659c3a801730a565d870ac516b5b1
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 18:43:33 2022 +0100
+
+    add new tag
+
+commit ca3c231fad8fb25f9a33a1483776335a9f6e25f0
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 00:58:35 2022 +0100
+
+    update box prefab
+    
+    a few boxes lacked trigger collider
+    standardize box size
+
+commit bcc491fee4c695e749483e357c1310a207760133
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 22 00:56:18 2022 +0100
+
+    Last room overhaul
+    
+    still need bars fixed
+
+commit d964571fe3e44ca6393773b68c11ff949d63c459
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 21 01:55:56 2022 +0100
+
+    2nd set of levels complete
+    
+    last room needs overhaul
+
+commit 955509bc8a664797abbbb8e218613000a4aa6ccd
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Fri May 20 20:37:01 2022 +0100
+
+    sort levels into group
+
+commit c502429fb2c7f3eadc17f1a64a3d406b51447be2
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Fri May 20 01:07:21 2022 +0100
+
+    Add barrier
+    
+    Stops player from taking items out of their designated areas.
+
+commit 9edd94f7dc18881555ac19bd2f007ef122621ea5
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 19 22:59:05 2022 +0100
+
+    levels basic interactions complete
+    
+    alter button code so objects (affected by buttons) state is set via bool not always false
+    group the "first" 5 most basic levels together
+    re-assig buttons
+    add invisible button variant
+
+commit a1362aba5b25b720b68f8f02ed989c96ea940f40
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed May 18 15:39:15 2022 +0100
+
+    Sort Files
+
+commit 4de9b791db6af41e8b6321a8e5fbeaba224ddf30
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue May 17 03:37:19 2022 +0100
+
+    fix iron bar texture
+
+commit 1df95b07a1f697f66703488927c6aff7afedbc99
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 15 21:24:30 2022 +0100
+
+    add decal
+
+commit 79b2a6c3793b207e1eb0bdbafc1be69a4ac3a229
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 15 00:41:34 2022 +0100
+
+    part of last comit
+
+commit 511b6e5ee91a8ed31848a5494ff4cd047f40586f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun May 15 00:39:29 2022 +0100
+
+    tweaks
+    
+    Reset lighting
+    added textures to node based platforms
+    rename texture
+
+commit bb15181597afa60a47eb9c040083cc0447e58907
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 17:39:53 2022 +0100
+
+    add hdrp for decals
+
+commit 4fb51ffcfa0d467f739b532fe0f46c349a07c0f9
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 17:27:10 2022 +0100
+
+    extend portal in "ice" level.
+
+commit a38d300c802aef22ff35bc426662e8cce8ca4daf
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 17:21:12 2022 +0100
+
+    fix perpetual motion for slider
+    
+    only stop if going in the bumpers direction
+
+commit 8902e4f7ecf001c6e31edff539ba63d4f5b48b7a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 02:15:09 2022 +0100
+
+    fixed test level.
+    
+    useful for "ice puzzle"
+
+commit 1834db773974344d6aea4b55fe7abde65858c5cb
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 02:13:58 2022 +0100
+
+    added Slide levels
+
+commit d0a67904c39cf82cab2118fde6a05e5cca097e76
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 02:13:07 2022 +0100
+
+    make pillars from modular asset into "walls" for use along with slider
+
+commit 0bcf809b43318c127da80b0c7e587f3bddd6275a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat May 14 02:12:08 2022 +0100
+
+    separate wall prefab into breakable floor and breakable wall
+
+commit 822e7352efcc1e0b798c4f2db9fafb1675fd3341
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:56:42 2022 +0100
+
+    rename scene
+
+commit 472bd9c1e0d61843b5838ac9b6a113489825fe4a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:56:00 2022 +0100
+
+    Added and fixed platform levels
+
+commit 0e6c067f91ba1670f0b1a57b998986be9b431cea
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:50:55 2022 +0100
+
+    update platform prefabs for the last 8 changes
+
+commit be95dc94ff37cb280c27aa165f234f718a1dacea
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:49:34 2022 +0100
+
+    rework platform script.
+    
+    now only works only with PickUp(s) directly
+    player movement script accounts for change ^
+    
+    makes sure to avoid the wrong object(s) being orphaned
+    makes code more readable
+
+commit b355272bd755f042cad5d8e60bc6736e4bc57f7c
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:43:32 2022 +0100
+
+    stop slider from moving after the player leaves it
+
+commit f269858672df0d6e65426a97a4a0486c6cc5e480
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:42:25 2022 +0100
+
+    re-name script
+
+commit 9eb0fdf62a85ad9a9337646458bdac0e40ddc0f6
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:40:49 2022 +0100
+
+    bumpers keep track of the amount of walls
+    
+    stops them going in-between walls
+
+commit 85d7507ec6560c28e66c191f53df57fd1519df6c
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:39:34 2022 +0100
+
+    tag walls
+
+commit fada10f8fff3894e0115f126f9917e30aca58d8f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:39:17 2022 +0100
+
+    initiate release at the start so that buttons activate items and don't just stop them on release on the first press
+
+commit 583db93fefab869211918f43c9528223a3e65514
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 01:37:32 2022 +0100
+
+    Add script to set pos of objects with buttons
+
+commit f230110c7410bd7f5107b6ac8f906492a9abe452
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu May 5 00:57:14 2022 +0100
+
+    set all prefab pos to 0 0 0
+    
+    slider scale moved from 4 to 6 to have consistent size
+    slider is also a platform so that it can be stood on while moving and we don't have to handle it as a special case
+    add position script to reset slider
+
+commit 25c25c9c1b5e61550efc35d829ab8e7ccd5691e8
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon May 2 17:27:40 2022 +0100
+
+    fixed 2 levels
+
+commit 56f6eb9aad4c0fa93a259f30cce04d0e3549286f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Apr 25 22:29:29 2022 +0100
+
+    added iron bar
+    
+    use instead of hole
+
+commit 705a699c077bd5443762f86adef6a2e452d34b2d
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Apr 25 22:23:24 2022 +0100
+
+    test teleport and simple platform
+
+commit b6b04c90d160f5cb3c180a97c9111ee7581e8da5
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Apr 25 22:22:59 2022 +0100
+
+    added secondary platform type.
+    
+    used when not directly controlling the platform
+
+commit 7f1389ff561ea230714e3517fc135af05f9aff38
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Apr 25 22:22:09 2022 +0100
+
+    add teleport
+    
+    used when out of bounds
+
+commit 2623efe54d4a13f9f0153ea678e64722a0501a0b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Apr 20 20:24:49 2022 +0100
+
+    rename scene to "Box levels"
+
+commit 5a1527957ae6afe6e654b8c2d38f95ad7512133c
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Apr 20 20:23:16 2022 +0100
+
+    make and add physics mat to walls to stop stickiness
+
+commit 5d82ba8ac0a8139be4c5a8aa392624d9ea36a887
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Apr 20 20:23:10 2022 +0100
+
+    Box levels nearly finished
+
+commit 5c4487383ee2b8c579f8da41b3edef6a4e5dc2a6
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Apr 20 20:21:28 2022 +0100
+
+    enlarge button
+
+commit 928e28c5d9aedaedaf314b740d664ad393ad2fef
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Apr 5 19:52:09 2022 +0100
+
+    add new scene
+
+commit 725f9beeda3fac884e8163ca1ec4fafc02dedf36
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Apr 5 19:51:57 2022 +0100
+
+    make player bigger
+
+commit d80488ebc154f84fc2637a009e1e975baa730859
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Apr 5 19:50:58 2022 +0100
+
+    move to scripts folder
+
+commit 82679c061ab9f14696f0bc61b6f2143fb44169b6
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Apr 5 19:23:12 2022 +0100
+
+    added castle pack
+
+commit 5ab6de3d8a1f238fa375b5c3851b2a2564dc446c
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Apr 5 19:22:48 2022 +0100
+
+    add crates and barrels pack
+
+commit 24370c6ff5ef1d1a4b9663ae5491a1adb66bc9eb
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu Feb 24 23:04:58 2022 +0000
+
+    temp flag
+
+commit b3316c096ebe7745cc1dcf6b3159c2459973f017
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Thu Feb 24 23:00:53 2022 +0000
+
+    pulley
+    
+    made sure all scenes work with changes
+
+commit 588bf58ee14259adc6776b105d13b304252a4c9a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Feb 23 23:02:53 2022 +0000
+
+    button INTERACTION
+
+commit 30ad9a0b4a59148fda1cedefe0d8f07d77214ab0
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Feb 23 22:55:22 2022 +0000
+
+    stop player floating
+
+commit 5218642cf5b0672d1835fec4ab6dbba8aef97c11
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Feb 23 20:36:55 2022 +0000
+
+    rework grab to stop glitches
+
+commit c2925c173c0a24d75208e044550b5e7d0bc23986
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Wed Feb 23 20:17:59 2022 +0000
+
+    new materials + mild level changes
+
+commit fcab2c0f17b0c003155869d9a7c66a8656c981e4
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Feb 22 05:51:36 2022 +0000
+
+    new level setup
+
+commit 3a3397a186660bcc9fc941584abee2562b292b48
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Tue Feb 22 05:50:30 2022 +0000
+
+    sort files
+    
+    added prefabs
+    added a couple of materials
+
+commit 34237d35123e579ca49be88ae5147a993c4d8395
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Feb 13 19:56:08 2022 +0000
+
+    quality of life improvement
+
+commit d6096a4aed95e8ffb049dd3bc4951275b7841d5b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Feb 13 19:54:45 2022 +0000
+
+    nearly free movement
+
+commit 3ed28d64e0fefa30f41950741e16d1f957f8cd77
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Feb 13 18:38:27 2022 +0000
+
+    Fix bumper detection
+
+commit 5300f458cbf8f8ee34506186ea8e12940fb5ce15
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Feb 13 15:01:46 2022 +0000
+
+    slider inherits forward
+    
+    make sure slider forward matches player
+
+commit 2eb581b6f34b9c2dc0d851166a5c4d1f12800160
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Feb 12 20:24:16 2022 +0000
+
+    the better slider
+
+commit 4744e31d01058ee241801e407ab171657f346032
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Feb 12 18:00:21 2022 +0000
+
+    Slider
+
+commit 3defef94525149235ebb3a26922e1f19d5a77e99
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jan 17 21:00:54 2022 +0000
+
+    cant jump while holding object
+
+commit b96d58e8c396e402c9ae1c9bb9eafe806918732f
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jan 17 20:23:55 2022 +0000
+
+    can stay on platform
+    
+    platform cannot have scale
+
+commit efca62a1fdda0fcbc71a337d90587f1040ba9bcc
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jan 17 19:29:55 2022 +0000
+
+    throw & break object
+
+commit 325269b4fe5b4a46f4093d7488c738aab23b2808
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Mon Jan 17 19:29:13 2022 +0000
+
+    rename
+
+commit c372fe21d84334b9d606265f1d3905b8a9eded8b
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 19:26:54 2021 +0000
+
+    stop box floating by waking RB
+
+commit 5b142736896e0cadb87f838aaf2c17f3c02495f2
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 19:26:34 2021 +0000
+
+    shorten drop time
+
+commit 85fae8cec3322ae7bddc5aaed4bb46f79565907d
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 19:18:32 2021 +0000
+
+    move close to
+
+commit bb634054bf7d4b4a966c74c5cca4fe84644e62cd
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 18:42:32 2021 +0000
+
+    delete unused
+
+commit 0387ec4b721422797e9cb0c148038e88de38025d
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 18:40:48 2021 +0000
+
+    scroll wheel movement
+
+commit 2fe88570773afd1d51b99126c8580974eaa2ce26
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 18:01:23 2021 +0000
+
+    clean up
+
+commit 6bebba3d2729f674f9dfba37dcb8e4834659006d
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sun Nov 21 00:19:31 2021 +0000
+
+    pickup3 first stage
+
+commit e3fcc22455dbfba79b0205418dff234fd05d206a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Nov 20 19:04:35 2021 +0000
+
+    pickup 3
+
+commit 7c103a4a4fac05769425c41cc8c59dd41c054d1a
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Nov 20 03:20:45 2021 +0000
+
+    code clean up
+
+commit 4c4c1c253eabb14983488aea3747d9e4a05b23a5
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Nov 20 03:09:27 2021 +0000
+
+    pickup 2
+
+commit eed20d4437002b2aed33b1b7000687025a45bf2c
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Nov 13 17:53:24 2021 +0000
+
+    temp fix
+
+commit 437a4acecd5a57e250f23bdb8d4ff02462940b57
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Nov 13 17:09:31 2021 +0000
+
+    partially solved object bounce and drop
+    
+    drop needs to be more forgiving
+
+commit fad8a491818e6913c20ac476e5078f2f0c4042a5
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Sat Nov 13 16:39:23 2021 +0000
+
+    stop target floating away or spinning while picked up
+
+commit 3db23f7bbcb17465ffe710051379eca491db629d
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Fri Nov 12 20:50:55 2021 +0000
+
+    basic UI
+
+commit e1f76e46a11cc8e42109ba7d2edf089f4099a4c2
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Fri Nov 12 20:49:34 2021 +0000
+
+    missing line
+
+commit 65268b7b06dfe6b019dcba5ba4fc8af437d3c6b4
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Fri Nov 12 20:46:34 2021 +0000
+
+    movement & pickup
+
+commit 5b4acb547f362723095524d97695c6342980a085
+Author: Miron Bury <miron.bury@gmail.com>
+Date:   Fri Nov 12 20:42:51 2021 +0000
+
+    Initial commit
